@@ -27,6 +27,7 @@ function Main() {
     input,
   } = useContext(Context);
 
+  
   return (
     <>
       <div className="flex flex-col w-full h-100vh text-white lg:overflow-y-hidden max-[640px]:w-100vw max-[640px]:h-mobile-main-height">
@@ -35,17 +36,29 @@ function Main() {
           <div className=" mt-2 flex items-center flex-col w-fit mx-3">
             {!showResults ? (
               <>
-                <div className="mb-4 flex w-full items-start flex-col max-[640px]:items-center">
+                <div className="mb-4 flex w-full items-start flex-col max-[640px]:items-center"
+                    
+                >
                   <h1 className="font-openSans font-semibold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-500 to-rose-500 leading-relaxed">
                     Hello, Alias
                   </h1>
-                  <h2 className="font-openSans font-semibold text-transparent text-5xl text-zinc-600 max-[640px]:text-3xl">
+                  <h2 className="font-openSans font-semibold text-transparent text-5xl text-zinc-600 max-[640px]:text-3xl"
+                    
+                      >
                     How can I help you Today?
                   </h2>
                 </div>
 
-                <div className="flex gap-4 mt-16 sm:flex-wrap sm:overflow-scroll no-scrollbar sm:h-60 max-[950px]:w-4/5 max-[640px]:flex-wrap max-[640px]:px-16 max-[640px]:max-w-full max-[640px]:items-center max-[640px]:h-2/5 max-[640px]:overflow-scroll">
-                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 h-52 relative hover:bg-zinc-800 cursor-pointer">
+                <div className="flex gap-4 mt-16 sm:flex-wrap sm:overflow-scroll no-scrollbar sm:h-60 max-[950px]:w-4/5 max-[640px]:flex-wrap max-[640px]:px-16 max-[640px]:max-w-full max-[640px]:items-center max-[640px]:h-2/5 max-[640px]:overflow-scroll"
+                      
+                >
+                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 h-52 relative hover:bg-zinc-800 cursor-pointer"
+                        onClick={() => {
+                          setInput('Walk me through how to apply for a new role')
+                          onSent('Walk me through how to apply for a new role')
+                        }}
+                        
+                  >
                     <h4 className="font-poppins text-zinc-200 text-sm">
                       Walk me through how to apply for a new role
                     </h4>
@@ -58,7 +71,12 @@ function Main() {
                     </div>
                   </div>
 
-                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 relative h-52 hover:bg-zinc-800 cursor-pointer">
+                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 relative h-52 hover:bg-zinc-800 cursor-pointer"
+                        onClick={() => {
+                          setInput('Help me understand American football')
+                          onSent('Help me understand American football')
+                        }}
+                  >
                     <h4 className="font-poppins text-zinc-200  text-sm">
                       Help me understand American football
                     </h4>
@@ -71,8 +89,15 @@ function Main() {
                     </div>
                   </div>
 
-                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 h-52 hover:bg-zinc-800 cursor-pointer">
-                    <h4 className="font-poppins text-zinc-200  text-sm">
+                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0  w-48 h-52 hover:bg-zinc-800 cursor-pointer"
+                        onClick={() => {
+                          setInput('Help me compare these college majors')
+                          onSent('Help me compare these college majors')
+                        }}
+                  >
+                    <h4 
+                      
+                    className="font-poppins text-zinc-200  text-sm">
                       Help me compare these college majors
                     </h4>
                     <div className="w-full flex justify-end rounded-full relative -bottom-20">
@@ -84,8 +109,14 @@ function Main() {
                     </div>
                   </div>
 
-                  <div className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0 h-52  w-48 relative hover:bg-zinc-800 cursor-pointer">
-                    <h4 className="font-poppins text-zinc-200  text-sm">
+                  <div 
+                  onClick={() => {
+                    setInput('Give me ways to add certain foods in my diet')
+                    onSent('Give me ways to add certain foods in my diet')
+                  }}
+                  className="bg-zinc-900 p-5 rounded-xl flex flex-col flex-shrink-0 flex-grow-0 h-52  w-48 relative hover:bg-zinc-800 cursor-pointer">
+                    <h4 
+                    className="font-poppins text-zinc-200  text-sm ">
                       Give me ways to add certain foods in my diet
                     </h4>
                     <div className="w-full flex justify-end rounded-full relative top-16">
@@ -100,7 +131,9 @@ function Main() {
               </>
             ) : (
               <>
-                <div className="w-responsive-box-w  flex max-[640px]:h-4/6 max-[640px]:w-full  flex-col justify-start  overflow-y-scroll h-response-box-h no-scrollbar ">
+                <div className="w-responsive-box-w  flex max-[640px]:h-4/6 max-[640px]:w-full  flex-col justify-start  overflow-y-scroll h-response-box-h no-scrollbar "
+                      
+                >
                   <div className="flex items-center gap-3 my-1 mb-0">
                     <img
                       src={assets.user_icon2}
@@ -146,7 +179,7 @@ function Main() {
               </>
             )}
           <div className=" max-[950px]:w-full w-input-box-w">
-             <div className="flex items-center justify-between relative bottom-3 bg-zinc-800 mt-12 rounded-full h-16 p-3 px-7 w-full">
+            <div className="flex items-center justify-between relative bottom-3 bg-zinc-800 mt-12 rounded-full h-16 p-3 px-7 w-full">
               {/* {input box} */}
               <input
                 type="text"
@@ -169,6 +202,7 @@ function Main() {
                     size={45}
                     className="cursor-pointer hover:bg-zinc-700 rounded-full p-3"
                     onClick={() => onSent()}
+                    
                   />
                 )}
               </div>

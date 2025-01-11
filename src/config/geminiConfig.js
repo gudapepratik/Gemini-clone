@@ -31,7 +31,7 @@ async function run(inputprompt) {
   });
 
   const result = await chatSession.sendMessage(inputprompt);
-
+  console.log(result.response.text())
   return result.response.text()
 }
 

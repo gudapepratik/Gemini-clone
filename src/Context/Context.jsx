@@ -44,8 +44,8 @@ const ContextProvider = (props) => {
         setLoading(false)
         setShowResults(false)
     }
-    const onSent = async (prompt) => {
 
+    const onSent = async (prompt) => {
         setResultData('');
         setLoading(true);
         setShowResults(true)
@@ -59,9 +59,10 @@ const ContextProvider = (props) => {
             response = await run(input)
         }
         let responsearray = response.split("**")
-        let newResponse = beutifyResponse(responsearray)
+        console.log(responsearray)
+        let newResponse = beutifyResponse(responsearray) // add bold texts
         
-        let newResponse2 = newResponse.split("*").join("</br>") 
+        let newResponse2 = newResponse.split("*").join("</br>")
         for (let i=0; i<newResponse2.length;i++) {
             AddtypingEffect(i,newResponse2[i]);
         }
